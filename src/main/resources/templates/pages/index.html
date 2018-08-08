@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码 DEMO</title>
+
+    <!-- 下面的几行代码的顺序十分重要: 显示外部的引入, 再是本地的 js 文件 -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bestdata-captcha.css" type="text/css" />
+</head>
+<body>
+    <h1 align="center">点击下面的按钮, 开启验证</h1>
+    <div>
+        <input style="width: 100px" type="submit" onclick="showImg()" value="开始验证"/>
+    </div>
+    <!-- 静态模板框-->
+    <div class="modal" id="area-modify" style="display: none" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog entry-dialog">
+            <div class="modal-content entry-con">
+                <div class="modal-content avatar-con modify-con">
+                    <button type="button" class="close2" data-dismiss="modal" aria-hidden="true" style="color:#1b4287;">
+                        ×
+                    </button>
+                    <div class="ava-tit"><span>请在下图</span><span style="color: blue">依次</span><span>点击:</span><span class="targetChars"></span></div>
+                    <div class="modify-in">
+                        <a href="javascript:;"><img style="cursor: pointer;" class="CheckImageW" id="valiImage" alt="" src=""></a>
+                        <!-- 设置 3 个辅助的 span 用于标记点击效果 -->
+                        <span class="hiddenMark4Captcha1" style="display: none;"><img src="captcha/captcha_marks/1.png"></span>
+                        <span class="hiddenMark4Captcha2" style="display: none"><img src="captcha/captcha_marks/2.png"></span>
+                        <span class="hiddenMark4Captcha3" style="display: none"><img src="captcha/captcha_marks/3.png"></span>
+                    </div>
+                    <div class="modal-footer ava-footer modify-footer" style="padding: 0px;">
+                        <div class="mofity-btn">
+                            <!-- 此处的 href="javascript:void(); 若不需要对应的超链接做任何的操作, 直接拿掉即可, 即更换为 href="javascript:; -->
+                            <a href="javascript:;" class="ava-save" onclick="changeImg()" style="width: 80px">刷新验证码</a>
+                            <a href="javascript:;" onclick="checkImage()" class="ava-concel" data-dismiss="modal">确定</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input name="showImg" type="hidden" data-toggle="modal" data-target="#area-modify">
+    <input name="closeImg" type="hidden" class="close2" data-dismiss="modal" aria-hidden="true">
+
+</body>
+</html>

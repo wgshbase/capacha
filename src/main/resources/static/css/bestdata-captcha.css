@@ -1,0 +1,23 @@
+.modal-dialog{
+    width:326px; margin:30px auto;
+}
+.modify-in {
+    margin-top: 0px;
+    box-sizing: content-box;
+}
+.modal-content {
+    box-sizing: content-box;
+}
+.avatar-con {
+    padding: 0 2px 0 2px;
+    border-radius: 2px;
+}
+.CheckImageW{
+    width: 306px;
+    height: 343px;
+}
+.targetChars{
+    font-size: 25px;
+    font-family:"华文新魏";
+    font-weight:normal
+}

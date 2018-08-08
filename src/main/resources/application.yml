@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /bestdata-captcha
+
+
+
+spring:
+  thymeleaf:
+      #thymeleaf模版前缀
+      prefix: classpath:/templates/pages/
+  mvc:
+    view:
+      suffix: .html
+  web:
+    loginurl: http://localhost:8080/bestdata-captcha/
+    googleExecutePath: C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe
+  auto:
+    openUrl: true
